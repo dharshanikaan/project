@@ -1,0 +1,45 @@
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: whitesmoke;
+    margin: 50px 50px 50px;
+}
+
+#form{
+    display: flex;
+    flex-direction: row;
+}
+.container {
+    max-width: 6000px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.534);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.61);
+}
+input[type="number"], input[type="text"], select {
+   
+    margin-bottom: 12px;
+    border: 1px solid rgb(70, 66, 66);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+label{
+    font-size: larger;
+}
+}
+button {
+    padding: 20px 20px;
+    background-color:black;
+    color: #fff;
+    border:10px 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #a2b7cc;
+}
+ul {
+    list-style-type: disc;
+    padding: 0;
+}
