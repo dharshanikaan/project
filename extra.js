@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let expenses = JSON.parse(localStorage.getItem('expenses')) || [];
 
-    // Function to display expenses
-    function displayExpenses() {
+    
+    function display() {
         expenseList.innerHTML = '';
         expenses.forEach(function(expense, index) {
             const li = document.createElement('li');
-            li.textContent = `Amount: $${expense.amount} | Description: ${expense.description} | Category: ${expense.category}`;
+            li.textContent = `Amount: ${expense.amount} | Description: ${expense.description} | Category: ${expense.category}`;
 
             // Create Edit button
             const editBtn = document.createElement('button');
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Function to add expense
+   
     function addExpense() {
         const amount = parseFloat(expenseAmount.value);
         const description = expenseDescription.value;
@@ -57,23 +57,23 @@ document.addEventListener('DOMContentLoaded', function() {
         expenses.push(expense);
         localStorage.setItem('expenses', JSON.stringify(expenses));
         expenseForm.reset();
-        displayExpenses(); // Refresh the UI to display the newly added expense
+        display(); // Refresh the UI to display the newly added expense
     }
     function editExpense(index) {
         // For demonstration purposes, increment the amount by 1
-        expenses[index].amount = parseFloat(expenses[index].amount) + 1;
+        expenses[index].amount = parseFloat(expenses[index].amount) ;
         localStorage.setItem('expenses', JSON.stringify(expenses));
-        displayExpenses(); // Refresh the UI to reflect the updated expense
+        display(); // Refresh the UI to reflect the updated expense
     }
     function deleteExpense(index) {
         expenses.splice(index, 1);
         localStorage.setItem('expenses', JSON.stringify(expenses));
-        displayExpenses(); // Refresh the UI to reflect the deleted expense
+        display(); 
     }
 
-    // Event listener for add expense button
+    
     addExpenseBtn.addEventListener('click', addExpense);
 
-    // Display initial expenses on page load
-    displayExpenses();
+    
+    display();
 });
